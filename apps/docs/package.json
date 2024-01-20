@@ -1,34 +1,27 @@
 {
   "name": "@repo/docs",
-  "version": "0.0.0",
-  "type": "module",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "storybook dev -p 6006",
-    "build": "storybook build --docs",
-    "preview-storybook": "serve storybook-static",
-    "clean": "rm -rf .turbo && rm -rf node_modules",
-    "lint": "eslint ./stories/*.stories.tsx --max-warnings 0"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@vven/ui": "workspace:*",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^18",
+    "react-dom": "^18",
+    "next": "14.1.0"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@storybook/addon-actions": "^7.6.10",
-    "@storybook/addon-docs": "^7.6.10",
-    "@storybook/addon-essentials": "^7.6.10",
-    "@storybook/addon-links": "^7.6.10",
-    "@storybook/react": "^7.6.10",
-    "@storybook/react-vite": "^7.6.10",
-    "@vitejs/plugin-react": "^4.2.1",
-    "eslint": "^8.56.0",
-    "serve": "^14.2.1",
-    "storybook": "^7.6.10",
-    "@repo/typescript-config": "workspace:*",
-    "typescript": "^5.3.3",
-    "vite": "^5.0.10"
+		"@repo/eslint-config": "workspace:*",
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "eslint": "^8"
   }
 }

@@ -4,7 +4,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 
 export function Button({ children, ...other }: ButtonProps): JSX.Element {
   return (
-    <button type="button" {...other}>
+    <button className="text-red-600" type="button" {...other}>
       {children}
     </button>
   )

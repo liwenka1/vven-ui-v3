@@ -37,6 +37,7 @@ module.exports = {
   rules: {
     "import/no-default-export": "off",
     "react/jsx-sort-props": "off",
-		"@typescript-eslint/explicit-function-return-type": "off",
+    "react/function-component-definition": "off",
+    "@typescript-eslint/explicit-function-return-type": "off"
   }
 }

@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function Main() {
+const Main = () => {
   const [count, setCount] = useState(0)
 
   return (
@@ -17,3 +17,5 @@ export default function Main() {
     </div>
   )
 }
+
+export default Main

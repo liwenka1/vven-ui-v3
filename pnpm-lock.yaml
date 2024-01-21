@@ -97,15 +97,24 @@ importers:
       '@vitejs/plugin-react':
         specifier: ^4.2.1
         version: 4.2.1(vite@5.0.10)
+      autoprefixer:
+        specifier: ^10.0.1
+        version: 10.4.17(postcss@8.4.33)
       eslint:
         specifier: ^8.56.0
         version: 8.56.0
+      postcss:
+        specifier: ^8
+        version: 8.4.33
       serve:
         specifier: ^14.2.1
         version: 14.2.1
       storybook:
         specifier: ^7.6.10
         version: 7.6.10
+      tailwindcss:
+        specifier: ^3.3.0
+        version: 3.4.1
       typescript:
         specifier: ^5.3.3
         version: 5.3.3
@@ -2487,7 +2496,7 @@ packages:
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dependencies:
       '@npmcli/name-from-folder': 2.0.0
-      glob: 10.3.4
+      glob: 10.3.10
       minimatch: 9.0.3
       read-package-json-fast: 3.0.2
     dev: true
@@ -5006,7 +5015,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001574
+      caniuse-lite: 1.0.30001579
       electron-to-chromium: 1.4.622
       node-releases: 2.0.14
       update-browserslist-db: 1.0.13(browserslist@4.22.2)
@@ -5105,10 +5114,6 @@ packages:
   /camelcase@7.0.1:
     resolution: {integrity: sha512-xlx1yCK2Oc1APsPXDL2LdlNP6+uu8OCDdhOBSVT279M/S+y75O30C2VuD8T2ogdePBBl7PfPF4504tnLgX3zfw==}
     engines: {node: '>=14.16'}
-    dev: true
-
-  /caniuse-lite@1.0.30001574:
-    resolution: {integrity: sha512-BtYEK4r/iHt/txm81KBudCUcTy7t+s9emrIaHqjYurQ10x71zJ5VQ9x1dYPcz/b+pKSp4y/v1xSI67A+LzpNyg==}
     dev: true
 
   /caniuse-lite@1.0.30001579:
@@ -9878,6 +9883,7 @@ packages:
 
   /resolve@2.0.0-next.4:
     resolution: {integrity: sha512-iMDbmAWtfU+MHpxt/I5iWI7cY6YVEZUQ3MBgPQ++XD1PELuJHIl82xBmObyP2KyQmkNB2dsqF7seoQQiAn5yDQ==}
+    hasBin: true
     dependencies:
       is-core-module: 2.13.1
       path-parse: 1.0.7

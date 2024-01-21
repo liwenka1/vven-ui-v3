@@ -30,6 +30,7 @@ export const Primary: Story = {
       }}
     >
       Hello
+			<span className="text-red-600">123</span>
     </Button>
   ),
   name: "Button",

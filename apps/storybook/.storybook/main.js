@@ -1,5 +1,4 @@
 import { dirname, join, resolve } from "path"
-import "../src/index.css"
 
 function getAbsolutePath(value) {
   return dirname(require.resolve(join(value, "package.json")))

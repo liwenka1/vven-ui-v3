@@ -34,6 +34,7 @@ module.exports = {
   ignorePatterns: ["node_modules/", "dist/", ".eslintrc.js", "**/*.css"],
   // add rules configurations here
   rules: {
-    "import/no-default-export": "off"
+    "import/no-default-export": "off",
+    "react/function-component-definition": "off"
   }
 }

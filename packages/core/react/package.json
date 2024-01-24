@@ -11,7 +11,7 @@
   "sideEffects": false,
   "license": "MIT",
   "files": [
-    "dist/**"
+    "dist"
   ],
   "scripts": {
     "build": "tsup src --dts",

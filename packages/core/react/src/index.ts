@@ -1,1 +1,1 @@
-export * from "@vven/button"
+export * from "@vven-ui/button"

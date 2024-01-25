@@ -1,5 +1,5 @@
 {
-  "name": "@repo/storybook",
+  "name": "@vven-ui/storybook",
   "version": "0.0.0",
   "type": "module",
   "private": true,
@@ -13,11 +13,11 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-		"@vven/react": "workspace:*"
+		"@vven-ui/react": "workspace:*"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "@vven-ui/eslint-config": "workspace:*",
+    "@vven-ui/typescript-config": "workspace:*",
     "@storybook/addon-actions": "^7.6.10",
     "@storybook/addon-docs": "^7.6.10",
     "@storybook/addon-essentials": "^7.6.10",

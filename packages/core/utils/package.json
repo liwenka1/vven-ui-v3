@@ -1,9 +1,10 @@
 {
-  "name": "@vven-ui/button",
+  "name": "@vven-ui/utils",
   "version": "0.0.0",
-  "description": "Buttons Component",
+  "description": "Utils Components",
   "keywords": [
-    "button"
+    "Utils",
+    "Components"
   ],
   "author": "Li WenKai 李文凯 <2020583117@qq.com>",
   "main": "src/index.ts",
@@ -14,10 +15,11 @@
   ],
   "scripts": {
     "build": "tsup src --dts",
-    "dev": "tsup src --watch --dts",
+    "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
     "lint": "eslint . --max-warnings 0",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
+  "dependencies": {},
   "devDependencies": {
     "tsup": "^8.0.1"
   },

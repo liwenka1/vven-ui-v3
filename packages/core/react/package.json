@@ -1,5 +1,5 @@
 {
-  "name": "@vven/react",
+  "name": "@vven-ui/react",
   "version": "0.0.0",
   "description": "React Components",
   "keywords": [
@@ -20,10 +20,9 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "dependencies": {
-    "@vven/button": "workspace:*"
+    "@vven-ui/button": "workspace:*"
   },
   "devDependencies": {
-		"@repo/typescript-config": "workspace:*",
     "tsup": "^8.0.1"
   },
   "publishConfig": {

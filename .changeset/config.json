@@ -6,5 +6,5 @@
   "linked": [],
   "access": "public",
   "updateInternalDependencies": "patch",
-  "ignore": ["@vven/docs"]
+  "ignore": ["@vven-ui/docs", "@vven-ui/storybook"]
 }

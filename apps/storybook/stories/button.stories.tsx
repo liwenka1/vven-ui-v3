@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react"
-import { Button } from "@vven/react"
+import { Button } from "@vven-ui/react"
 
 const meta: Meta<typeof Button> = {
   component: Button,

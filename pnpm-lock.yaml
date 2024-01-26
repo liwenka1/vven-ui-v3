@@ -30,9 +30,6 @@ importers:
         specifier: ^18
         version: 18.2.0(react@18.2.0)
     devDependencies:
-      '@vven-ui/eslint-config':
-        specifier: workspace:*
-        version: link:../../configs/eslint-config
       '@types/node':
         specifier: ^20
         version: 20.10.6
@@ -42,6 +39,9 @@ importers:
       '@types/react-dom':
         specifier: ^18
         version: 18.2.18
+      '@vven-ui/eslint-config':
+        specifier: workspace:*
+        version: link:../../configs/eslint-config
       autoprefixer:
         specifier: ^10.0.1
         version: 10.4.17(postcss@8.4.33)
@@ -70,12 +70,6 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
     devDependencies:
-      '@vven-ui/eslint-config':
-        specifier: workspace:*
-        version: link:../../configs/eslint-config
-      '@vven-ui/typescript-config':
-        specifier: workspace:*
-        version: link:../../configs/typescript-config
       '@storybook/addon-actions':
         specifier: ^7.6.10
         version: 7.6.10
@@ -100,6 +94,12 @@ importers:
       '@vitejs/plugin-react':
         specifier: ^4.2.1
         version: 4.2.1(vite@5.0.10)
+      '@vven-ui/eslint-config':
+        specifier: workspace:*
+        version: link:../../configs/eslint-config
+      '@vven-ui/typescript-config':
+        specifier: workspace:*
+        version: link:../../configs/typescript-config
       autoprefixer:
         specifier: ^10.0.1
         version: 10.4.17(postcss@8.4.33)
@@ -150,18 +150,18 @@ importers:
 
   packages/components:
     devDependencies:
-      '@vven-ui/eslint-config':
-        specifier: workspace:*
-        version: link:../../configs/eslint-config
-      '@vven-ui/typescript-config':
-        specifier: workspace:*
-        version: link:../../configs/typescript-config
       '@types/react':
         specifier: ^18.2.46
         version: 18.2.46
       '@types/react-dom':
         specifier: ^18.2.18
         version: 18.2.18
+      '@vven-ui/eslint-config':
+        specifier: workspace:*
+        version: link:../../configs/eslint-config
+      '@vven-ui/typescript-config':
+        specifier: workspace:*
+        version: link:../../configs/typescript-config
       eslint:
         specifier: ^8.56.0
         version: 8.56.0
@@ -211,18 +211,18 @@ importers:
 
   packages/ui:
     devDependencies:
-      '@vven-ui/eslint-config':
-        specifier: workspace:*
-        version: link:../../configs/eslint-config
-      '@vven-ui/typescript-config':
-        specifier: workspace:*
-        version: link:../../configs/typescript-config
       '@types/react':
         specifier: ^18.2.46
         version: 18.2.46
       '@types/react-dom':
         specifier: ^18.2.18
         version: 18.2.18
+      '@vven-ui/eslint-config':
+        specifier: workspace:*
+        version: link:../../configs/eslint-config
+      '@vven-ui/typescript-config':
+        specifier: workspace:*
+        version: link:../../configs/typescript-config
       eslint:
         specifier: ^8.56.0
         version: 8.56.0

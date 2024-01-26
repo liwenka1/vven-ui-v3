@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint -c .eslintrc.js ./**/*.{ts,tsx}",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
-		"@vven-ui/eslint-config": "workspace:*",
+    "@vven-ui/eslint-config": "workspace:*",
     "@vven-ui/typescript-config": "workspace:*",
-		"eslint": "^8.56.0"
+    "eslint": "^8.56.0"
   }
 }

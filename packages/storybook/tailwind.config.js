@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./node_modules/@vven-ui/react/**/*.{js,ts,jsx,tsx}", "./stories/**/*.{js,ts,jsx,tsx}"],
+  content: ["./stories/**/*.{js,ts,jsx,tsx}", "../components/*/src/**/*.{js,jsx,ts,tsx}"],
   darkMode: ["class"],
   theme: {
     extend: {}

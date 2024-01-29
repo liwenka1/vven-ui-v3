@@ -11,6 +11,12 @@ importers:
       '@changesets/cli':
         specifier: ^2.27.1
         version: 2.27.1
+      '@vven-ui/eslint-config':
+        specifier: workspace:*
+        version: link:configs/eslint-config
+      eslint:
+        specifier: ^8.56.0
+        version: 8.56.0
       prettier:
         specifier: ^3.1.1
         version: 3.1.1
@@ -58,11 +64,71 @@ importers:
         specifier: ^5
         version: 5.3.3
 
-  apps/storybook:
+  configs/eslint-config:
+    devDependencies:
+      '@next/eslint-plugin-next':
+        specifier: ^14.1.0
+        version: 14.1.0
+      '@vercel/style-guide':
+        specifier: ^5.1.0
+        version: 5.1.0(@next/eslint-plugin-next@14.1.0)(eslint@8.56.0)(prettier@3.1.1)(typescript@5.3.3)
+      eslint-config-turbo:
+        specifier: ^1.11.3
+        version: 1.11.3(eslint@8.56.0)
+      eslint-plugin-mdx:
+        specifier: ^2.3.2
+        version: 2.3.2(eslint@8.56.0)
+      eslint-plugin-only-warn:
+        specifier: ^1.1.0
+        version: 1.1.0
+      eslint-plugin-storybook:
+        specifier: ^0.6.15
+        version: 0.6.15(eslint@8.56.0)(typescript@5.3.3)
+
+  configs/typescript-config: {}
+
+  packages/components/button:
+    devDependencies:
+      '@types/react':
+        specifier: ^18.2.46
+        version: 18.2.46
+      '@types/react-dom':
+        specifier: ^18.2.18
+        version: 18.2.18
+      '@vven-ui/typescript-config':
+        specifier: workspace:*
+        version: link:../../../configs/typescript-config
+      react:
+        specifier: ^18.0.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^18.0.0
+        version: 18.2.0(react@18.2.0)
+      tsup:
+        specifier: ^8.0.1
+        version: 8.0.1(postcss@8.4.33)(typescript@5.3.3)
+
+  packages/core/react:
+    dependencies:
+      '@vven-ui/button':
+        specifier: workspace:*
+        version: link:../../components/button
+    devDependencies:
+      tsup:
+        specifier: ^8.0.1
+        version: 8.0.1(postcss@8.4.33)(typescript@5.3.3)
+
+  packages/core/utils:
+    devDependencies:
+      tsup:
+        specifier: ^8.0.1
+        version: 8.0.1(postcss@8.4.33)(typescript@5.3.3)
+
+  packages/storybook:
     dependencies:
       '@vven-ui/react':
         specifier: workspace:*
-        version: link:../../packages/core/react
+        version: link:../core/react
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -124,90 +190,6 @@ importers:
       vite:
         specifier: ^5.0.10
         version: 5.0.10
-
-  configs/eslint-config:
-    devDependencies:
-      '@next/eslint-plugin-next':
-        specifier: ^14.1.0
-        version: 14.1.0
-      '@vercel/style-guide':
-        specifier: ^5.1.0
-        version: 5.1.0(@next/eslint-plugin-next@14.1.0)(eslint@8.56.0)(prettier@3.1.1)(typescript@5.3.3)
-      eslint-config-turbo:
-        specifier: ^1.11.3
-        version: 1.11.3(eslint@8.56.0)
-      eslint-plugin-mdx:
-        specifier: ^2.3.2
-        version: 2.3.2(eslint@8.56.0)
-      eslint-plugin-only-warn:
-        specifier: ^1.1.0
-        version: 1.1.0
-      eslint-plugin-storybook:
-        specifier: ^0.6.15
-        version: 0.6.15(eslint@8.56.0)(typescript@5.3.3)
-
-  configs/typescript-config: {}
-
-  packages/components:
-    devDependencies:
-      '@types/react':
-        specifier: ^18.2.46
-        version: 18.2.46
-      '@types/react-dom':
-        specifier: ^18.2.18
-        version: 18.2.18
-      '@vven-ui/eslint-config':
-        specifier: workspace:*
-        version: link:../../configs/eslint-config
-      '@vven-ui/typescript-config':
-        specifier: workspace:*
-        version: link:../../configs/typescript-config
-      eslint:
-        specifier: ^8.56.0
-        version: 8.56.0
-      react:
-        specifier: ^18.0.0
-        version: 18.2.0
-      react-dom:
-        specifier: ^18.0.0
-        version: 18.2.0(react@18.2.0)
-      tailwindcss:
-        specifier: ^3.3.0
-        version: 3.4.1
-
-  packages/components/button:
-    devDependencies:
-      tsup:
-        specifier: ^8.0.1
-        version: 8.0.1(postcss@8.4.33)(typescript@5.3.3)
-
-  packages/core:
-    devDependencies:
-      '@vven-ui/eslint-config':
-        specifier: workspace:*
-        version: link:../../configs/eslint-config
-      '@vven-ui/typescript-config':
-        specifier: workspace:*
-        version: link:../../configs/typescript-config
-      eslint:
-        specifier: ^8.56.0
-        version: 8.56.0
-
-  packages/core/react:
-    dependencies:
-      '@vven-ui/button':
-        specifier: workspace:*
-        version: link:../../components/button
-    devDependencies:
-      tsup:
-        specifier: ^8.0.1
-        version: 8.0.1(postcss@8.4.33)(typescript@5.3.3)
-
-  packages/core/utils:
-    devDependencies:
-      tsup:
-        specifier: ^8.0.1
-        version: 8.0.1(postcss@8.4.33)(typescript@5.3.3)
 
   packages/ui:
     devDependencies:

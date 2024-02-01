@@ -19,6 +19,8 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "dependencies": {
+    "@vven-ui/utils": "workspace:*",
+    "@radix-ui/react-slot": "^1.0.2",
     "class-variance-authority": "^0.7.0"
   },
   "devDependencies": {

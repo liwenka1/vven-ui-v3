@@ -2,6 +2,7 @@
 module.exports = {
   extends: ["@vven-ui/eslint-config/react.js"],
   rules: {
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": "off",
+    "@typescript-eslint/explicit-function-return-type": "off"
   }
 }

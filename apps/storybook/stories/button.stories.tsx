@@ -7,6 +7,11 @@ const meta: Meta<typeof Button> = {
     type: {
       control: { type: "radio" },
       options: ["button", "submit", "reset"]
+    },
+    asChild: {
+      control: {
+        type: "boolean"
+      }
     }
   }
 }
@@ -22,15 +27,20 @@ type Story = StoryObj<typeof Button>
  */
 export const Primary: Story = {
   render: (props) => (
-    <Button
-      {...props}
-      onClick={(): void => {
-        // eslint-disable-next-line no-alert -- alert for demo
-        alert("Hello from Turborepo!")
-      }}
-    >
-      Hello
-    </Button>
+    <>
+      <Button
+        {...props}
+        onClick={(): void => {
+          // eslint-disable-next-line no-alert -- alert for demo
+          alert("Hello from Turborepo!")
+        }}
+      >
+        Hello
+      </Button>
+      <Button asChild>
+        <a href="/contact">Contact</a>
+      </Button>
+    </>
   ),
   name: "Button",
   args: {

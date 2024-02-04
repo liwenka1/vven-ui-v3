@@ -2,7 +2,7 @@
 export default {
   content: [
     "./stories/**/*.{js,ts,jsx,tsx}",
-    "../../packages/components/*/src/**/*.{js,jsx,ts,tsx}"
+    "../../packages/components/*/src/**/*.tsx"
   ],
   darkMode: ["class"],
   theme: {

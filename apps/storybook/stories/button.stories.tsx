@@ -1,5 +1,6 @@
-import type { Meta, StoryObj } from "@storybook/react"
-import { Button } from "@vven-ui/react"
+import type { Meta } from "@storybook/react"
+import { Button, type ButtonProps } from "@vven-ui/react"
+import { useState } from "react"
 
 const meta: Meta<typeof Button> = {
   component: Button,
@@ -8,43 +9,57 @@ const meta: Meta<typeof Button> = {
       control: { type: "radio" },
       options: ["button", "submit", "reset"]
     },
-    asChild: {
-      control: {
-        type: "boolean"
-      }
+    variant: {
+      control: { type: "radio" },
+      options: ["primary"]
+    },
+    size: {
+      control: { type: "radio" },
+      options: ["small", "medium", "large"]
     }
   }
 }
 
 export default meta
 
-type Story = StoryObj<typeof Button>
+const defaultProps = {
+  children: <span>Button</span>,
+  type: "button",
+  variant: "primary",
+  size: "medium"
+}
 
-/*
- *👇 Render functions are a framework specific feature to allow you control on how the component renders.
- * See https://storybook.js.org/docs/react/api/csf
- * to learn how to use render functions.
- */
-export const Primary: Story = {
-  render: (props) => (
-    <>
-      <Button
-        {...props}
-        onClick={(): void => {
-          // eslint-disable-next-line no-alert -- alert for demo
-          alert("Hello from Turborepo!")
-        }}
-      >
-        Hello
-      </Button>
-      <Button asChild>
-        <a href="/contact">Contact</a>
-      </Button>
-    </>
-  ),
-  name: "Button",
+const StateTemplate = (args: ButtonProps) => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const handlePress = () => {
+    setIsOpen((prev) => !prev)
+  }
+
+  return (
+    <Button {...args} aria-label="Open" aria-pressed={isOpen} onClick={handlePress}>
+      {isOpen ? "Close" : "Open"}
+    </Button>
+  )
+}
+
+export const Default = {
   args: {
-    children: "Hello",
-    type: "button"
+    ...defaultProps
+  }
+}
+
+export const AsChild = {
+  args: {
+    asChild: true,
+    ...defaultProps
+  }
+}
+
+export const WithState = {
+  render: StateTemplate,
+
+  args: {
+    ...defaultProps
   }
 }

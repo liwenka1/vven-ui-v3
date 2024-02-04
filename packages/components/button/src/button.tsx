@@ -1,4 +1,5 @@
 import * as React from "react"
+
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
 
@@ -10,7 +11,7 @@ export interface ButtonProps
   asChild?: boolean
 }
 
-const buttonVariants = cva("font-semibold rounded border px-2 py-1", {
+const buttonVariants = cva("inline-flex items-center justify-center", {
   variants: {
     variant: {
       primary: "bg-blue-500 text-white border-transparent hover:bg-blue-600"

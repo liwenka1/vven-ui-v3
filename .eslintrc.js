@@ -4,6 +4,7 @@ module.exports = {
   rules: {
     "import/no-extraneous-dependencies": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
-    "import/order": "off"
+    "import/order": "off",
+    "react/jsx-no-leaked-render": "off"
   }
 }

@@ -1,6 +1,5 @@
 import type { Meta } from "@storybook/react"
-import { Button, type ButtonProps } from "@vven-ui/react"
-import { useState } from "react"
+import { Button } from "@vven-ui/react"
 
 const meta: Meta<typeof Button> = {
   component: Button,
@@ -11,11 +10,21 @@ const meta: Meta<typeof Button> = {
     },
     variant: {
       control: { type: "radio" },
-      options: ["primary"]
+      options: ["text", "contained", "outlined"]
     },
     size: {
       control: { type: "radio" },
       options: ["small", "medium", "large"]
+    },
+    radius: {
+      control: { type: "select" },
+      options: ["full", "lg", "md", "sm", "none"]
+    },
+    disabled: {
+      type: "boolean"
+    },
+    loading: {
+      type: "boolean"
     }
   }
 }
@@ -23,43 +32,25 @@ const meta: Meta<typeof Button> = {
 export default meta
 
 const defaultProps = {
-  children: <span>Button</span>,
   type: "button",
-  variant: "primary",
-  size: "medium"
-}
-
-const StateTemplate = (args: ButtonProps) => {
-  const [isOpen, setIsOpen] = useState(false)
-
-  const handlePress = () => {
-    setIsOpen((prev) => !prev)
-  }
-
-  return (
-    <Button {...args} aria-label="Open" aria-pressed={isOpen} onClick={handlePress}>
-      {isOpen ? "Close" : "Open"}
-    </Button>
-  )
+  variant: "contained",
+  size: "medium",
+  radius: "md",
+  disabled: false,
+  loading: false
 }
 
 export const Default = {
   args: {
+    children: "Button",
     ...defaultProps
   }
 }
 
 export const AsChild = {
   args: {
+    children: <span>这个是AsChild</span>,
     asChild: true,
-    ...defaultProps
-  }
-}
-
-export const WithState = {
-  render: StateTemplate,
-
-  args: {
     ...defaultProps
   }
 }

@@ -50,7 +50,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       props.disabled = true
     }
     const Comp = asChild ? Slot : "button"
-    return (
+    return asChild ? (
+      <Comp className={cn(buttonVariants({ className, variant, size, radius }))} ref={ref} {...props} />
+    ) : (
       <Comp className={cn(buttonVariants({ className, variant, size, radius }))} ref={ref} {...props}>
         {loading && <ReloadIcon className="animate-spin mr-1" />}
         {startContent}

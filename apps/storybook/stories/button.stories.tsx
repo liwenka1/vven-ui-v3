@@ -47,6 +47,23 @@ export const Default = {
   }
 }
 
+export const WithStartContent = {
+  args: {
+    children: "Button",
+		startContent: <span>startContent</span>,
+    ...defaultProps
+  }
+}
+
+export const WithEndContent= {
+  args: {
+    children: "Button",
+		endContent: <span>endContent</span>,
+    ...defaultProps
+  }
+}
+
+
 export const AsChild = {
   args: {
     children: <span>这个是AsChild</span>,

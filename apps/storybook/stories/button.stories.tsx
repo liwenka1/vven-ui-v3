@@ -1,4 +1,5 @@
 import type { Meta } from "@storybook/react"
+import { HeartIcon } from "@radix-ui/react-icons"
 import { Button } from "@vven-ui/react"
 
 const meta: Meta<typeof Button> = {
@@ -50,19 +51,18 @@ export const Default = {
 export const WithStartContent = {
   args: {
     children: "Button",
-		startContent: <span>startContent</span>,
+    startContent: <HeartIcon />,
     ...defaultProps
   }
 }
 
-export const WithEndContent= {
+export const WithEndContent = {
   args: {
     children: "Button",
-		endContent: <span>endContent</span>,
+    endContent: <HeartIcon />,
     ...defaultProps
   }
 }
-
 
 export const AsChild = {
   args: {

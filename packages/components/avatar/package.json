@@ -1,10 +1,9 @@
 {
-  "name": "@vven-ui/react",
+  "name": "@vven-ui/avatar",
   "version": "0.0.0",
-  "description": "React Components",
+  "description": "Avatar Component",
   "keywords": [
-    "React",
-    "Components"
+    "avatar"
   ],
   "author": "Li WenKai 李文凯 <2020583117@qq.com>",
   "main": "src/index.ts",
@@ -15,15 +14,21 @@
   ],
   "scripts": {
     "build": "tsup src --dts",
-    "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
-    "lint": "eslint . --max-warnings 0",
+    "build:fast": "tsup src",
+    "dev": "tsup src --watch --dts",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "dependencies": {
-		"@vven-ui/avatar": "workspace:*",
-    "@vven-ui/button": "workspace:*"
+    "@radix-ui/react-avatar": "^1.0.4",
+    "@vven-ui/utils": "workspace:*",
+    "class-variance-authority": "^0.7.0"
   },
   "devDependencies": {
+    "@types/react": "^18.2.46",
+    "@types/react-dom": "^18.2.18",
+    "@vven-ui/typescript-config": "workspace:*",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "tsup": "^8.0.1"
   },
   "publishConfig": {

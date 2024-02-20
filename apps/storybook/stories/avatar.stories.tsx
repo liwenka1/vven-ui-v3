@@ -10,7 +10,7 @@ export default meta
 
 const Template = () => (
   <Avatar>
-    <AvatarImage alt="@shadcn" src="https://github.com/shadcn.png" />
+    <AvatarImage alt="@liwenka1" src="https://avatars.githubusercontent.com/u/92351553?v=4" />
     <AvatarFallback>CN</AvatarFallback>
   </Avatar>
 )

@@ -65,7 +65,7 @@ export interface AvatarProps extends React.HTMLAttributes<HTMLSpanElement>, Vari
   showFallback?: boolean
 }
 
-const AvatarVariants = cva("inline-flex items-center justify-center", {
+const AvatarVariants = cva("inline-flex items-center justify-center bg-blue-50", {
   variants: {
     radius: {
       full: "rounded-full",

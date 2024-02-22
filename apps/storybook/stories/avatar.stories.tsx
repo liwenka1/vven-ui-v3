@@ -5,7 +5,7 @@ const meta: Meta<typeof Avatar> = {
   component: Avatar,
   argTypes: {
     size: {
-      control: { type: "radio" },
+      control: { type: "select" },
       options: ["small", "medium", "large"]
     },
     radius: {
@@ -17,12 +17,15 @@ const meta: Meta<typeof Avatar> = {
 
 export default meta
 
-// const Template = () => <Avatar />
+const defaultProps = {
+  size: "medium",
+  radius: "full"
+}
 
 export const Default = {
   args: {
+    ...defaultProps,
     src: "https://avatars.githubusercontent.com/u/92351553?v=4",
-    name: "javk",
-    radius: "full"
+    name: "javk"
   }
 }

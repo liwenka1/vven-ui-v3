@@ -22,6 +22,9 @@ const AvatarImageVariants = cva("h-full w-full", {
       sm: "rounded-sm",
       none: "rounded-none"
     }
+  },
+  defaultVariants: {
+    radius: "full"
   }
 })
 
@@ -40,6 +43,9 @@ const AvatarFallbackVariants = cva("h-full w-full flex items-center justify-cent
       medium: "text-base",
       large: "text-lg"
     }
+  },
+  defaultVariants: {
+    size: "medium"
   }
 })
 
@@ -54,9 +60,12 @@ AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName
 export interface AvatarProps extends React.HTMLAttributes<HTMLSpanElement>, VariantProps<typeof AvatarVariants> {
   src?: string
   name?: string
+  disabled?: boolean
+  bordered?: boolean
+  showFallback?: boolean
 }
 
-const AvatarVariants = cva("inline-flex items-center justify-center border-2 border-indigo-600", {
+const AvatarVariants = cva("inline-flex items-center justify-center", {
   variants: {
     radius: {
       full: "rounded-full",
@@ -70,14 +79,26 @@ const AvatarVariants = cva("inline-flex items-center justify-center border-2 bor
       medium: "w-12 h-12",
       large: "w-14 h-14"
     }
+  },
+  defaultVariants: {
+    radius: "full",
+    size: "medium"
   }
 })
 
 const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
-  ({ className, radius, size, src, name, ...props }, ref) => {
+  ({ className, radius, size, src, name, disabled = false, bordered = false, showFallback = false, ...props }, ref) => {
     return (
-      <AvatarRoot className={cn(AvatarVariants({ className, radius, size }))} ref={ref} {...props}>
-        <AvatarImage radius={radius} src={src} />
+      <AvatarRoot
+        className={cn(
+          AvatarVariants({ className, radius, size }),
+          disabled && "opacity-50",
+          bordered && "ring-2 ring-offset-2"
+        )}
+        ref={ref}
+        {...props}
+      >
+        {!showFallback && <AvatarImage radius={radius} src={src} />}
         <AvatarFallback size={size}>{name}</AvatarFallback>
       </AvatarRoot>
     )

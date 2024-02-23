@@ -24,8 +24,20 @@ const defaultProps = {
 
 export const Default = {
   args: {
+    ...defaultProps
+  }
+}
+
+export const WithText = {
+  args: {
     ...defaultProps,
-    src: "https://avatars.githubusercontent.com/u/92351553?v=4",
     name: "javk"
+  }
+}
+
+export const WithImage = {
+  args: {
+    ...defaultProps,
+    src: "https://avatars.githubusercontent.com/u/92351553?v=4"
   }
 }

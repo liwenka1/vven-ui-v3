@@ -41,3 +41,29 @@ export const WithImage = {
     src: "https://avatars.githubusercontent.com/u/92351553?v=4"
   }
 }
+
+export const Bordered = {
+  args: {
+    ...defaultProps,
+    src: "https://avatars.githubusercontent.com/u/92351553?v=4",
+    bordered: true
+  }
+}
+
+export const Disabled = {
+  args: {
+    ...defaultProps,
+    src: "https://avatars.githubusercontent.com/u/92351553?v=4",
+    bordered: true,
+    disabled: true
+  }
+}
+
+export const ShowFallback = {
+  args: {
+    ...defaultProps,
+    src: "https://avatars.githubusercontent.com/u/92351553?v=4",
+    name: "javk",
+    showFallback: true,
+  },
+};

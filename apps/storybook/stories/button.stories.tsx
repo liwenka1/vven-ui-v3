@@ -6,15 +6,15 @@ const meta: Meta<typeof Button> = {
   component: Button,
   argTypes: {
     type: {
-      control: { type: "radio" },
+      control: { type: "select" },
       options: ["button", "submit", "reset"]
     },
     variant: {
-      control: { type: "radio" },
+      control: { type: "select" },
       options: ["text", "contained", "outlined"]
     },
     size: {
-      control: { type: "radio" },
+      control: { type: "select" },
       options: ["small", "medium", "large"]
     },
     radius: {

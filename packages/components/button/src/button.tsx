@@ -22,7 +22,7 @@ const buttonVariants = cva(
       variant: {
         text: "text-blue-500 hover:bg-blue-50",
         contained: "bg-blue-500 text-white border-transparent hover:bg-blue-600 disabled:bg-gray-200",
-        outlined: "text-blue-500 hover:bg-blue-50 border border-blue-500 disabled:border-gray-400"
+        outlined: "text-blue-500 hover:bg-blue-50 ring-1 ring-offset-0 disabled:ring-gray-400"
       },
       size: {
         small: "text-sm",

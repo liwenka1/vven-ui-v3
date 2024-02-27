@@ -63,6 +63,7 @@ export interface AvatarProps extends React.HTMLAttributes<HTMLSpanElement>, Vari
   disabled?: boolean
   bordered?: boolean
   showFallback?: boolean
+  fallback?: React.ReactNode
 }
 
 const AvatarVariants = cva("inline-flex items-center justify-center bg-blue-50", {
@@ -87,7 +88,37 @@ const AvatarVariants = cva("inline-flex items-center justify-center bg-blue-50",
 })
 
 const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
-  ({ className, radius, size, src, name, disabled = false, bordered = false, showFallback = false, ...props }, ref) => {
+  (
+    {
+      className,
+      radius,
+      size,
+      src,
+      name,
+      disabled = false,
+      bordered = false,
+      showFallback = false,
+      fallback: fallbackCompoent,
+      ...props
+    },
+    ref
+  ) => {
+    const fallback = React.useMemo(() => {
+      if (!showFallback && src) return null
+
+      if (fallbackCompoent) {
+        return <AvatarFallback asChild>{fallbackCompoent}</AvatarFallback>
+      }
+
+      return <AvatarFallback size={size}>{name}</AvatarFallback>
+    }, [showFallback, src, fallbackCompoent, size, name])
+
+    const image = React.useMemo(() => {
+      if (!showFallback && src) return <AvatarImage radius={radius} src={src} />
+
+      return null
+    }, [showFallback, src, radius])
+
     return (
       <AvatarRoot
         className={cn(
@@ -98,8 +129,8 @@ const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
         ref={ref}
         {...props}
       >
-        {!showFallback && <AvatarImage radius={radius} src={src} />}
-        <AvatarFallback size={size}>{name}</AvatarFallback>
+        {image}
+        {fallback}
       </AvatarRoot>
     )
   }

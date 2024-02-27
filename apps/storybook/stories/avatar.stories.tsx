@@ -1,4 +1,5 @@
 import type { Meta } from "@storybook/react"
+import { HeartIcon } from "@radix-ui/react-icons"
 import { Avatar } from "@vven-ui/react"
 
 const meta: Meta<typeof Avatar> = {
@@ -38,7 +39,8 @@ export const WithText = {
 export const WithImage = {
   args: {
     ...defaultProps,
-    src: "https://avatars.githubusercontent.com/u/92351553?v=4"
+    src: "https://avatars.githubusercontent.com/u/92351553?v=4",
+    name: "javk"
   }
 }
 
@@ -64,6 +66,16 @@ export const ShowFallback = {
     ...defaultProps,
     src: "https://avatars.githubusercontent.com/u/92351553?v=4",
     name: "javk",
+    showFallback: true
+  }
+}
+
+export const ShowFallbackCompoent = {
+  args: {
+    ...defaultProps,
+    src: "https://avatars.githubusercontent.com/u/92351553?v=4",
+    name: "javk",
     showFallback: true,
-  },
-};
+    fallback: <HeartIcon />
+  }
+}

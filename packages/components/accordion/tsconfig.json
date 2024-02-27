@@ -1,0 +1,5 @@
+{
+  "extends": "@vven-ui/typescript-config/react-library.json",
+  "include": [".", "../tsup.config.ts"],
+  "exclude": ["dist", "build", "node_modules"]
+}

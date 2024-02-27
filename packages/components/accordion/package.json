@@ -1,0 +1,37 @@
+{
+  "name": "@vven-ui/accordion",
+  "version": "0.0.0",
+  "description": "Accordion Component",
+  "keywords": [
+    "accordion"
+  ],
+  "author": "Li WenKai 李文凯 <2020583117@qq.com>",
+  "main": "src/index.ts",
+  "sideEffects": false,
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src --dts",
+    "build:fast": "tsup src",
+    "dev": "tsup src --watch --dts",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  "dependencies": {
+    "@radix-ui/react-accordion": "^1.1.2",
+    "@vven-ui/utils": "workspace:*",
+    "class-variance-authority": "^0.7.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.46",
+    "@types/react-dom": "^18.2.18",
+    "@vven-ui/typescript-config": "workspace:*",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "tsup": "^8.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

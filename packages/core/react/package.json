@@ -20,7 +20,8 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "dependencies": {
-		"@vven-ui/avatar": "workspace:*",
+    "@vven-ui/accordion": "workspace:*",
+    "@vven-ui/avatar": "workspace:*",
     "@vven-ui/button": "workspace:*"
   },
   "devDependencies": {

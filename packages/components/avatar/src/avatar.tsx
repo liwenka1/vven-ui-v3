@@ -5,13 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@vven-ui/utils"
 
-const AvatarRoot = React.forwardRef<
-  React.ElementRef<typeof AvatarPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>
->(({ className, ...props }, ref) => {
-  return <AvatarPrimitive.Root className={className} ref={ref} {...props} />
-})
-AvatarRoot.displayName = AvatarPrimitive.Root.displayName
+const AvatarRoot = AvatarPrimitive.Root
 
 const AvatarImageVariants = cva("h-full w-full", {
   variants: {

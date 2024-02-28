@@ -38,13 +38,6 @@ const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>((props, ref) => {
     return <FallbackComponent className={cn(AvatarFallbackVariants({ className, size }))}>{name}</FallbackComponent>
   }, [showFallback, src, fallbackCompoent, size, name, className, FallbackComponent])
 
-  const image = React.useMemo(() => {
-    if (!showFallback && src)
-      return <ImageComponent className={cn(AvatarImageVariants({ className, radius }))} src={src} />
-
-    return null
-  }, [showFallback, src, radius, className, ImageComponent])
-
   return (
     <Component
       className={cn(
@@ -55,7 +48,7 @@ const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>((props, ref) => {
       ref={ref}
       {...otherProps}
     >
-      {image}
+      {!showFallback && src && <ImageComponent className={cn(AvatarImageVariants({ className, radius }))} src={src} />}
       {fallback}
     </Component>
   )

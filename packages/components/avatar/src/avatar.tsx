@@ -1,6 +1,6 @@
 import * as React from "react"
 
-import { AvatarIcon } from "@radix-ui/react-icons"
+import { PersonIcon } from "@radix-ui/react-icons"
 
 import { cn, safeText } from "@vven-ui/utils"
 import {
@@ -23,7 +23,7 @@ const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>((props, ref) => {
     size,
     src,
     name,
-    icon = <AvatarIcon />,
+    icon = <PersonIcon height="80%" width="80%" />,
     disabled,
     bordered,
     showFallback,

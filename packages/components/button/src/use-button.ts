@@ -1,4 +1,4 @@
-import { Slot } from "@radix-ui/react-slot"
+import { Slot, Slottable } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
 
 export const buttonVariants = cva(
@@ -65,8 +65,11 @@ export const useButton = (props: UseButtonProps) => {
 
   const Component = asChild ? Slot : "button"
 
+  const SlottableComponent = Slottable
+
   return {
     Component,
+    SlottableComponent,
     className,
     variant,
     size,
@@ -82,3 +85,5 @@ export const useButton = (props: UseButtonProps) => {
     ...otherprops
   }
 }
+
+export type UseButtonReturn = ReturnType<typeof useButton>

@@ -10,6 +10,7 @@ export type ButtonProps = UseButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   const {
     Component,
+    SlottableComponent,
     className,
     variant,
     size,
@@ -25,13 +26,12 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => 
     ...otherprops
   } = useButton(props)
 
-  return asChild ? (
-    <Component className={cn(buttonVariants({ className, variant, size, radius }))} ref={ref} {...otherprops} />
-  ) : (
+  return (
     <Component className={cn(buttonVariants({ className, variant, size, radius }))} ref={ref} {...otherprops}>
       {startContent}
       {loading && spinnerPlacement === "start" && spinner}
-      {loading && iconOnly ? null : children}
+      {asChild && <SlottableComponent>{children}</SlottableComponent>}
+      {asChild || (loading && iconOnly) ? null : children}
       {loading && spinnerPlacement === "end" && spinner}
       {endContent}
     </Component>
@@ -40,4 +40,4 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => 
 
 Button.displayName = "Button"
 
-export { Button, buttonVariants }
+export { Button }

@@ -35,6 +35,9 @@ export interface UseButtonProps
     VariantProps<typeof buttonVariants> {
   asChild?: boolean
   loading?: boolean
+  iconOnly?: boolean
+  spinner?: React.ReactNode
+  spinnerPlacement?: "start" | "end"
   startContent?: React.ReactNode
   endContent?: React.ReactNode
 }
@@ -47,27 +50,35 @@ export const useButton = (props: UseButtonProps) => {
     radius,
     asChild = false,
     loading = false,
+    iconOnly = false,
+    spinner,
+    spinnerPlacement = "start",
     startContent,
     endContent,
+    children,
     ...otherprops
   } = props
 
   if (loading) {
-    props.disabled = true
+    otherprops.disabled = true
   }
 
-  const Comp = asChild ? Slot : "button"
+  const Component = asChild ? Slot : "button"
 
   return {
-    Comp,
+    Component,
     className,
     variant,
     size,
     radius,
     asChild,
     loading,
+    iconOnly,
+    spinner,
+    spinnerPlacement,
     startContent,
     endContent,
+    children,
     ...otherprops
   }
 }

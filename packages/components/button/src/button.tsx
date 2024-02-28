@@ -8,18 +8,33 @@ import { useButton, buttonVariants, type UseButtonProps } from "./use-button"
 export type ButtonProps = UseButtonProps
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
-  const { Comp, className, variant, size, radius, asChild, loading, startContent, endContent, ...otherprops } =
-    useButton(props)
+  const {
+    Component,
+    className,
+    variant,
+    size,
+    radius,
+    asChild,
+    loading,
+    iconOnly,
+    spinner = <ReloadIcon className="animate-spin mr-1" />,
+    spinnerPlacement,
+    startContent,
+    endContent,
+    children,
+    ...otherprops
+  } = useButton(props)
 
   return asChild ? (
-    <Comp className={cn(buttonVariants({ className, variant, size, radius }))} ref={ref} {...otherprops} />
+    <Component className={cn(buttonVariants({ className, variant, size, radius }))} ref={ref} {...otherprops} />
   ) : (
-    <Comp className={cn(buttonVariants({ className, variant, size, radius }))} ref={ref} {...otherprops}>
-      {loading && <ReloadIcon className="animate-spin mr-1" />}
+    <Component className={cn(buttonVariants({ className, variant, size, radius }))} ref={ref} {...otherprops}>
       {startContent}
-      {props.children}
+      {loading && spinnerPlacement === "start" && spinner}
+      {loading && iconOnly ? null : children}
+      {loading && spinnerPlacement === "end" && spinner}
       {endContent}
-    </Comp>
+    </Component>
   )
 })
 

@@ -1,6 +1,8 @@
 import * as React from "react"
 
-import { cn } from "@vven-ui/utils"
+import { AvatarIcon } from "@radix-ui/react-icons"
+
+import { cn, safeText } from "@vven-ui/utils"
 import {
   AvatarFallbackVariants,
   AvatarImageVariants,
@@ -21,6 +23,7 @@ const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>((props, ref) => {
     size,
     src,
     name,
+    icon = <AvatarIcon />,
     disabled,
     bordered,
     showFallback,
@@ -35,8 +38,12 @@ const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>((props, ref) => {
       return <FallbackComponent asChild>{fallbackCompoent}</FallbackComponent>
     }
 
-    return <FallbackComponent className={cn(AvatarFallbackVariants({ className, size }))}>{name}</FallbackComponent>
-  }, [showFallback, src, fallbackCompoent, size, name, className, FallbackComponent])
+    return (
+      <FallbackComponent className={cn(AvatarFallbackVariants({ className, size }))}>
+        {name ? safeText(name) : icon}
+      </FallbackComponent>
+    )
+  }, [showFallback, src, fallbackCompoent, size, name, icon, className, FallbackComponent])
 
   return (
     <Component

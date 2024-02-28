@@ -59,6 +59,7 @@ const AvatarFallback = AvatarPrimitive.Fallback
 export interface UseAvatarProps extends React.HTMLAttributes<HTMLSpanElement>, VariantProps<typeof AvatarRootVariants> {
   src?: string
   name?: string
+  icon?: React.ReactNode
   disabled?: boolean
   bordered?: boolean
   showFallback?: boolean
@@ -72,6 +73,7 @@ export const useAvatar = (props: UseAvatarProps) => {
     size,
     src,
     name,
+    icon,
     disabled = false,
     bordered = false,
     showFallback = false,
@@ -94,6 +96,7 @@ export const useAvatar = (props: UseAvatarProps) => {
     size,
     src,
     name,
+    icon,
     disabled,
     bordered,
     showFallback,

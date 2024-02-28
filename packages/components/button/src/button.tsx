@@ -30,7 +30,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => 
     <Component className={cn(buttonVariants({ className, variant, size, radius }))} ref={ref} {...otherprops}>
       {startContent}
       {loading && spinnerPlacement === "start" && spinner}
-      {asChild && <SlottableComponent>{children}</SlottableComponent>}
+      {asChild && SlottableComponent}
       {asChild || (loading && iconOnly) ? null : children}
       {loading && spinnerPlacement === "end" && spinner}
       {endContent}

@@ -65,7 +65,7 @@ export const useButton = (props: UseButtonProps) => {
 
   const Component = asChild ? Slot : "button"
 
-  const SlottableComponent = Slottable({ children })
+  const SlottableComponent = Slottable
 
   return {
     Component,

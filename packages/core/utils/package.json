@@ -24,6 +24,7 @@
     "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {
+    "@vven-ui/typescript-config": "workspace:*",
     "tsup": "^8.0.1"
   },
   "publishConfig": {

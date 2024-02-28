@@ -25,6 +25,7 @@
     "@vven-ui/button": "workspace:*"
   },
   "devDependencies": {
+    "@vven-ui/typescript-config": "workspace:*",
     "tsup": "^8.0.1"
   },
   "publishConfig": {

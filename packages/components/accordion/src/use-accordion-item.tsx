@@ -1,19 +1,35 @@
-import * as Accordion from "@radix-ui/react-accordion"
+import * as AccordionPrimitive from "@radix-ui/react-accordion"
 import { cva, type VariantProps } from "class-variance-authority"
 
 const AccordionItemVariants = cva()
 
-export interface UseAccordionItem
+export interface UseAccordionItemProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof AccordionItemVariants> {}
+    VariantProps<typeof AccordionItemVariants> {
+  value: string
+  label?: React.ReactNode | string
+}
 
-export const useAccordionItem = (props: UseAccordionItem) => {
-  const { ...otherProps } = props
+export const useAccordionItem = (props: UseAccordionItemProps) => {
+  const { className, value, label, children, ...otherProps } = props
 
-  const Component = Accordion.Root
+  const Component = AccordionPrimitive.Item
+
+  const HeaderComponent = AccordionPrimitive.Header
+
+  const TriggerComponent = AccordionPrimitive.Trigger
+
+  const ContentComponent = AccordionPrimitive.Content
 
   return {
     Component,
+    HeaderComponent,
+    TriggerComponent,
+    ContentComponent,
+    className,
+    value,
+    label,
+    children,
     ...otherProps
   }
 }

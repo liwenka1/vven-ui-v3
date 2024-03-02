@@ -11,7 +11,7 @@ export default meta
 const defaultContent = <span>这里是AccordionItem</span>
 
 const Template = (args: AccordionProps) => (
-  <Accordion type="single" {...args}>
+  <Accordion collapsible type="single" {...args}>
     <AccordionItem label={<span className="text-red-300">试一下span</span>} value="1">
       {defaultContent}
     </AccordionItem>

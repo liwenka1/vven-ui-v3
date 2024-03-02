@@ -39,11 +39,11 @@ const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>((props, ref) => {
     }
 
     return (
-      <FallbackComponent className={cn(AvatarFallbackVariants({ className, size }))}>
+      <FallbackComponent className={cn(AvatarFallbackVariants({ size }))}>
         {name ? safeText(name) : icon}
       </FallbackComponent>
     )
-  }, [showFallback, src, fallbackCompoent, size, name, icon, className, FallbackComponent])
+  }, [showFallback, src, fallbackCompoent, size, name, icon, FallbackComponent])
 
   return (
     <Component
@@ -55,7 +55,7 @@ const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>((props, ref) => {
       ref={ref}
       {...otherProps}
     >
-      {!showFallback && src && <ImageComponent className={cn(AvatarImageVariants({ className, radius }))} src={src} />}
+      {!showFallback && src && <ImageComponent className={cn(AvatarImageVariants({ radius }))} src={src} />}
       {fallback}
     </Component>
   )

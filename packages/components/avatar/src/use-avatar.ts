@@ -22,8 +22,6 @@ export const AvatarRootVariants = cva("inline-flex items-center justify-center b
   }
 })
 
-const AvatarRoot = AvatarPrimitive.Root
-
 export const AvatarImageVariants = cva("h-full w-full", {
   variants: {
     radius: {
@@ -39,8 +37,6 @@ export const AvatarImageVariants = cva("h-full w-full", {
   }
 })
 
-const AvatarImage = AvatarPrimitive.Image
-
 export const AvatarFallbackVariants = cva("h-full w-full flex items-center justify-center", {
   variants: {
     size: {
@@ -53,8 +49,6 @@ export const AvatarFallbackVariants = cva("h-full w-full flex items-center justi
     size: "medium"
   }
 })
-
-const AvatarFallback = AvatarPrimitive.Fallback
 
 export interface UseAvatarProps extends React.HTMLAttributes<HTMLSpanElement>, VariantProps<typeof AvatarRootVariants> {
   src?: string
@@ -81,11 +75,11 @@ export const useAvatar = (props: UseAvatarProps) => {
     ...otherProps
   } = props
 
-  const Component = AvatarRoot
+  const Component = AvatarPrimitive.Root
 
-  const ImageComponent = AvatarImage
+  const ImageComponent = AvatarPrimitive.Image
 
-  const FallbackComponent = AvatarFallback
+  const FallbackComponent = AvatarPrimitive.Fallback
 
   return {
     Component,

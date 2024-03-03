@@ -10,7 +10,7 @@ export const AccordionTriggerVariants = cva(
 )
 
 export const AccordionContentVariants = cva(
-  "data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+  "[data-state=closed]:animate-[] [data-state=open]:animate-[]"
 )
 
 export interface UseAccordionItemProps

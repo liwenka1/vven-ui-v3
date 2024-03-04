@@ -21,7 +21,8 @@
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.2",
     "@vven-ui/utils": "workspace:*",
-    "class-variance-authority": "^0.7.0"
+    "class-variance-authority": "^0.7.0",
+    "framer-motion": "^11.0.8"
   },
   "devDependencies": {
     "@types/react": "^18.2.46",
